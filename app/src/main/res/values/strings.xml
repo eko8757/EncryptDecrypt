@@ -15,4 +15,8 @@
                   \nMuhammad Imam
                   \n14030065</string>
     <string name="splash">Splash Screen</string>
+    <string name="hint_encrypt">Masukkan Text</string>
+    <string name="encrypt">Enkripsi</string>
+    <string name="decrypt">Dekripsi</string>
+    <string name="hint_decrypt">Hasil...</string>
 </resources>
