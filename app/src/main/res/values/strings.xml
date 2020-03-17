@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">EnkripDekrip</string>
+    <string name="judul">Tata Cara Penggunaan</string>
+    <string name="petunjuk">\nPertama Pengguna Harus Menentukan Akan Melakukan Enripsi (Mengacak Pesan) Atau Deskripsi
+                  (Mengembalikan Pesan Kebentuk Aslinya)
+                  \n
+                  \nJika pengguna sudah menentukan pilihan akan melakukan proses Enkripsi atau Deskripsi,
+                   maka pengguna harus menginputkan pesan yang akan di Enkripsi atau Deskripsi didalam kolom Input.
+                   Sehingga hasil dari proses Enkripsi dan Deskripsi dapat dilihat didalam kolom output.
+                   </string>
+    <string name="judulutama">Penerapan Algoritma Lipat Pada Android
+                  \nGuna Mengamankan Komunikasi Data
+                  \nDi Media Sosial
+                  \n
+                  \nMuhammad Imam
+                  \n14030065</string>
+    <string name="splash">Splash Screen</string>
+</resources>
