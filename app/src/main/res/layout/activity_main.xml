@@ -1,88 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fillViewport="true"
+    tools:context=".view.home.MainActivity">
 
-    <EditText
-        android:id="@+id/ed_encrypt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_encrypt"
-        app:layout_constraintEnd_toStartOf="@id/guideline3"
-        app:layout_constraintStart_toEndOf="@id/guideline2"
-        app:layout_constraintTop_toBottomOf="@id/guideline" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_encrypt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/encrypt"
-        app:layout_constraintEnd_toStartOf="@id/guideline5"
-        app:layout_constraintStart_toEndOf="@id/guideline2"
-        app:layout_constraintTop_toBottomOf="@id/guideline4" />
+        <ImageView
+            android:id="@+id/img_home"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:src="@drawable/img_home"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
-    <Button
-        android:id="@+id/btn_decrypt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/decrypt"
-        app:layout_constraintEnd_toStartOf="@id/guideline3"
-        app:layout_constraintStart_toEndOf="@id/guideline5"
-        app:layout_constraintTop_toBottomOf="@id/guideline4" />
+        <TextView
+            android:id="@+id/tv_greetings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/greetings"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/img_home" />
 
-    <EditText
-        android:id="@+id/ed_result"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_decrypt"
-        app:layout_constraintTop_toBottomOf="@id/guideline6"
-        app:layout_constraintStart_toEndOf="@id/guideline2"
-        app:layout_constraintEnd_toStartOf="@id/guideline3"/>
+        <Button
+            android:id="@+id/btn_menu_enkrip"
+            android:layout_width="250dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_btn"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/enkripsi"
+            android:textColor="@color/colorTextWhite"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_greetings" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="50dp" />
+        <Button
+            android:id="@+id/btn_menu_dekrip"
+            android:layout_width="250dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/bg_btn"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/dekripsi"
+            android:textColor="@color/colorTextWhite"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/btn_menu_enkrip" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="20dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="100dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="120dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="200dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

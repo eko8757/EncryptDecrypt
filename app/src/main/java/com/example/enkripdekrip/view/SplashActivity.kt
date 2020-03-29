@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.enkripdekrip.MainActivity
+import com.example.enkripdekrip.view.home.MainActivity
 import com.example.enkripdekrip.R
 
 class SplashActivity : AppCompatActivity() {

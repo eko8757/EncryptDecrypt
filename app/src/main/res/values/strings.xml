@@ -19,4 +19,14 @@
     <string name="encrypt">Enkripsi</string>
     <string name="decrypt">Dekripsi</string>
     <string name="hint_decrypt">Hasil...</string>
+    <string name="enkripdekrip">Enkrip Dekrip</string>
+    <string name="greetings">Selamat datang di EnkripDekrip</string>
+    <string name="enkripsi">ENKRIPSI</string>
+    <string name="dekripsi">DEKRIPSI</string>
+    <string name="masukkanteks">Masukkan teks..</string>
+    <string name="masukkankey">Masukkan key..</string>
+    <string name="hasilenkrip">Hasil enkrip..</string>
+    <string name="hasildekrip">Hasil dekrip...</string>
+    <string name="title_dekrip">Dekripsi</string>
+    <string name="title_enkrip">Enkripsi</string>
 </resources>

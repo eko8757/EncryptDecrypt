@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.dekrip.DekripActivity">
+
+    <EditText
+        android:id="@+id/ed_text_dekrip"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/roboto_light"
+        android:hint="@string/masukkanteks"
+        android:padding="8dp"
+        android:textColor="@color/colorTextBlack"
+        android:textColorHint="@color/colorTextBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+
+    <EditText
+        android:id="@+id/ed_key_dekrip"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/roboto_light"
+        android:hint="@string/masukkankey"
+        android:padding="8dp"
+        android:textColor="@color/colorTextBlack"
+        android:textColorHint="@color/colorTextBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/ed_text_dekrip" />
+
+    <Button
+        android:id="@+id/btn_dekrip"
+        android:layout_width="250dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/dekripsi"
+        android:textColor="@color/colorTextWhite"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/ed_key_dekrip" />
+
+    <TextView
+        android:id="@+id/tv_hasil_dekrip"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/hasildekrip"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/btn_dekrip" />
+
+    <ProgressBar
+        android:id="@+id/progress_dekrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_dekrip"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="80dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
