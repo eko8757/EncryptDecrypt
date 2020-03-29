@@ -1,10 +1,9 @@
-package com.example.enkripdekrip.model.enkrip
+package com.example.enkripdekrip.model.dekrip
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class PostEnkrip(
-
+data class PostDekrip(
     @SerializedName("text")
     @Expose
     var text: String?,

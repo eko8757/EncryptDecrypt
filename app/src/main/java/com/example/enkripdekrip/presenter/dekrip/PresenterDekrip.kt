@@ -1,38 +1,38 @@
-package com.example.enkripdekrip.presenter.enkrip
+package com.example.enkripdekrip.presenter.dekrip
 
 import android.util.Log
-import com.example.enkripdekrip.model.enkrip.PostEnkrip
-import com.example.enkripdekrip.model.enkrip.ResponseEnkrip
+import com.example.enkripdekrip.model.dekrip.PostDekrip
+import com.example.enkripdekrip.model.dekrip.ResponseDekrip
 import com.example.enkripdekrip.service.BaseApi
-import com.example.enkripdekrip.view.enkrip.EnkripView
+import com.example.enkripdekrip.view.dekrip.DekripView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Response
 
-class PresenterEnkrip(val view: EnkripView, val factory: BaseApi) {
+class PresenterDekrip(val view: DekripView, val factory: BaseApi) {
 
     private var mCompositeDisposable: CompositeDisposable? = null
 
     fun postData(text: String, key: String) {
         view.showLoading()
-        val dataEnkrip = PostEnkrip(text, key)
+        val dataDekrip = PostDekrip(text, key)
         mCompositeDisposable = CompositeDisposable()
         mCompositeDisposable?.add(
-            factory.postDataEnkrip(dataEnkrip)
+            factory.postDayaDekrip(dataDekrip)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribeWith(object : DisposableObserver<Response<ResponseEnkrip>>() {
+                .subscribeWith(object : DisposableObserver<Response<ResponseDekrip>>() {
                     override fun onComplete() {
                         view.hideLoading()
                     }
 
-                    override fun onNext(t: Response<ResponseEnkrip>) {
+                    override fun onNext(t: Response<ResponseDekrip>) {
                         if (t.code() == 201) {
                             view.hideLoading()
                             view.showData(t.body()?.data.toString())
-                            Log.d("DataEnkrip", t.body()?.data.toString())
+                            Log.d("DataDekripsi", t.body()?.data.toString())
                         } else {
                             view.hideLoading()
                             view.showToast(t.body()?.message.toString())
@@ -42,7 +42,6 @@ class PresenterEnkrip(val view: EnkripView, val factory: BaseApi) {
                     override fun onError(e: Throwable) {
                         view.hideLoading()
                         view.showToast(e.message.toString())
-
                     }
                 })
         )

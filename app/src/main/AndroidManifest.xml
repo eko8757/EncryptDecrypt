@@ -18,12 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".view.dekrip.DekripActivity"
-            android:parentActivityName=".view.home.MainActivity"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"
             android:label="@string/title_dekrip"/>
         <activity
             android:name=".view.enkrip.EnkripActivity"
-            android:parentActivityName=".view.home.MainActivity"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"
             android:label="@string/title_enkrip"/>
         <activity
@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.home.MainActivity"
+            android:name=".view.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme" />
     </application>

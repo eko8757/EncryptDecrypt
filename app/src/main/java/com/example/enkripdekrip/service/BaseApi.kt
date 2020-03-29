@@ -1,7 +1,10 @@
 package com.example.enkripdekrip.service
 
+import com.example.enkripdekrip.model.dekrip.PostDekrip
+import com.example.enkripdekrip.model.dekrip.ResponseDekrip
 import com.example.enkripdekrip.model.enkrip.PostEnkrip
 import com.example.enkripdekrip.model.enkrip.ResponseEnkrip
+import com.example.enkripdekrip.utils.Constants
 import com.google.gson.GsonBuilder
 import io.reactivex.Observable
 import okhttp3.OkHttpClient
@@ -15,13 +18,18 @@ import java.util.concurrent.TimeUnit
 
 interface BaseApi {
 
-    @POST("enkrip.php")
+    @POST("enkripsi_chiper.php")
     fun postDataEnkrip(
         @Body postEnkrip: PostEnkrip?
     ) : Observable<Response<ResponseEnkrip>>
 
+    @POST("dekripsi_chiper.php")
+    fun postDayaDekrip(
+        @Body postDekrip: PostDekrip?
+    ) : Observable<Response<ResponseDekrip>>
+
     companion object {
-        var URL: String = "http://masshookpakeko.com/"
+        var URL: String = Constants.BASE_URL
         fun create(): BaseApi {
             val gson = GsonBuilder()
                 .setLenient()
