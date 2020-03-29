@@ -41,10 +41,9 @@ class EnkripActivity : AppCompatActivity(), EnkripView, View.OnClickListener {
 
     override fun checkForm() {
         val text = ed_text_enkrip.text.toString()
-        val key = ed_key_enkrip.text.toString()
 
-        if (text.isNotEmpty() && key.isNotEmpty()) {
-            presenterEnkrip.postData(text, key)
+        if (text.isNotEmpty()) {
+            presenterEnkrip.postData(text)
         } else {
             showToast("Cannot be empty")
         }

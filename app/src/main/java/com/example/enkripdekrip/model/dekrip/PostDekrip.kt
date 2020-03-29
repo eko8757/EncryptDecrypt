@@ -4,11 +4,8 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class PostDekrip(
+
     @SerializedName("text")
     @Expose
-    var text: String?,
-
-    @SerializedName("key")
-    @Expose
-    var key: String?
+    var text: String?
 )

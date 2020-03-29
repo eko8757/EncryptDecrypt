@@ -21,22 +21,6 @@
         app:layout_constraintStart_toEndOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
-    <EditText
-        android:id="@+id/ed_key_dekrip"
-        android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/bg_edittext"
-        android:fontFamily="@font/roboto_light"
-        android:hint="@string/masukkankey"
-        android:padding="8dp"
-        android:textColor="@color/colorTextBlack"
-        android:textColorHint="@color/colorTextBlack"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/ed_text_dekrip" />
-
     <Button
         android:id="@+id/btn_dekrip"
         android:layout_width="250dp"
@@ -48,7 +32,7 @@
         android:textColor="@color/colorTextWhite"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/ed_key_dekrip" />
+        app:layout_constraintTop_toBottomOf="@id/ed_text_dekrip" />
 
     <TextView
         android:id="@+id/tv_hasil_dekrip"

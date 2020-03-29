@@ -15,9 +15,9 @@ class PresenterDekrip(val view: DekripView, val factory: BaseApi) {
 
     private var mCompositeDisposable: CompositeDisposable? = null
 
-    fun postData(text: String, key: String) {
+    fun postData(text: String) {
         view.showLoading()
-        val dataDekrip = PostDekrip(text, key)
+        val dataDekrip = PostDekrip(text)
         mCompositeDisposable = CompositeDisposable()
         mCompositeDisposable?.add(
             factory.postDayaDekrip(dataDekrip)

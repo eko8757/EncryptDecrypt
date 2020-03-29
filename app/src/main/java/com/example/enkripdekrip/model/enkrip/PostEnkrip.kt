@@ -7,9 +7,5 @@ data class PostEnkrip(
 
     @SerializedName("text")
     @Expose
-    var text: String?,
-
-    @SerializedName("key")
-    @Expose
-    var key: String?
+    var text: String?
 )

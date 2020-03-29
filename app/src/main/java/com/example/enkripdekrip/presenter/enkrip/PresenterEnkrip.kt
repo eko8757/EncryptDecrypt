@@ -15,9 +15,9 @@ class PresenterEnkrip(val view: EnkripView, val factory: BaseApi) {
 
     private var mCompositeDisposable: CompositeDisposable? = null
 
-    fun postData(text: String, key: String) {
+    fun postData(text: String) {
         view.showLoading()
-        val dataEnkrip = PostEnkrip(text, key)
+        val dataEnkrip = PostEnkrip(text)
         mCompositeDisposable = CompositeDisposable()
         mCompositeDisposable?.add(
             factory.postDataEnkrip(dataEnkrip)

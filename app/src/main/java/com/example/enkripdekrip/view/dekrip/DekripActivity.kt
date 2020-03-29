@@ -41,9 +41,8 @@ class DekripActivity : AppCompatActivity(), DekripView, View.OnClickListener {
 
     override fun checkForm() {
         val text = ed_text_dekrip.text.toString()
-        val key = ed_key_dekrip.text.toString()
-        if (text.isNotEmpty() && key.isNotEmpty()) {
-            presenter.postData(text, key)
+        if (text.isNotEmpty()) {
+            presenter.postData(text)
         } else {
             showToast("Cannot be empty")
         }
