@@ -9,17 +9,19 @@
     <EditText
         android:id="@+id/ed_text_dekrip"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_edittext"
         android:fontFamily="@font/roboto_light"
         android:hint="@string/masukkanteks"
         android:padding="8dp"
+        android:maxLines="1"
         android:textColor="@color/colorTextBlack"
         android:textColorHint="@color/colorTextBlack"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        tools:ignore="Autofill,TextFields" />
 
     <Button
         android:id="@+id/btn_dekrip"
@@ -37,11 +39,12 @@
     <TextView
         android:id="@+id/tv_hasil_dekrip"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_edittext"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/hasildekrip"
+        android:padding="6dp"
         android:textAlignment="center"
         android:textColor="@color/colorTextBlack"
         android:textSize="14sp"
@@ -56,10 +59,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_dekrip"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+        app:layout_constraintStart_toStartOf="@id/btn_dekrip"
+        app:layout_constraintEnd_toEndOf="@id/btn_dekrip"
+        app:layout_constraintTop_toTopOf="@id/btn_dekrip"
+        app:layout_constraintBottom_toBottomOf="@id/btn_dekrip"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"

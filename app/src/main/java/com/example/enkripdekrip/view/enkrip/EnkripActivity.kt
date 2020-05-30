@@ -8,6 +8,7 @@ import com.example.enkripdekrip.R
 import com.example.enkripdekrip.presenter.enkrip.PresenterEnkrip
 import com.example.enkripdekrip.service.BaseApi
 import com.example.enkripdekrip.utils.gone
+import com.example.enkripdekrip.utils.invisible
 import com.example.enkripdekrip.utils.visible
 import kotlinx.android.synthetic.main.activity_enkrip.*
 
@@ -33,10 +34,12 @@ class EnkripActivity : AppCompatActivity(), EnkripView, View.OnClickListener {
 
     override fun showLoading() {
         progress_enkrip.visible()
+        btn_enkrip.invisible()
     }
 
     override fun hideLoading() {
         progress_enkrip.gone()
+        btn_enkrip.visible()
     }
 
     override fun checkForm() {

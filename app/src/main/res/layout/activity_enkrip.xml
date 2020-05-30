@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/ed_text_enkrip"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_edittext"
         android:fontFamily="@font/roboto_light"
         android:hint="@string/masukkanteks"
@@ -37,8 +37,9 @@
     <TextView
         android:id="@+id/tv_hasil_enkrip"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:padding="6dp"
         android:background="@drawable/bg_edittext"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/hasilenkrip"
@@ -55,11 +56,11 @@
         android:id="@+id/progress_enkrip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/btn_enkrip"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+        app:layout_constraintStart_toStartOf="@id/btn_enkrip"
+        app:layout_constraintEnd_toEndOf="@id/btn_enkrip"
+        app:layout_constraintTop_toTopOf="@id/btn_enkrip"
+        app:layout_constraintBottom_toBottomOf="@id/btn_enkrip"
+        android:visibility="gone" />
 
 
     <androidx.constraintlayout.widget.Guideline

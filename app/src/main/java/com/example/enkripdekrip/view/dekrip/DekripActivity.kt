@@ -8,6 +8,7 @@ import com.example.enkripdekrip.R
 import com.example.enkripdekrip.presenter.dekrip.PresenterDekrip
 import com.example.enkripdekrip.service.BaseApi
 import com.example.enkripdekrip.utils.gone
+import com.example.enkripdekrip.utils.invisible
 import com.example.enkripdekrip.utils.visible
 import kotlinx.android.synthetic.main.activity_dekrip.*
 
@@ -33,10 +34,12 @@ class DekripActivity : AppCompatActivity(), DekripView, View.OnClickListener {
 
     override fun showLoading() {
         progress_dekrip.visible()
+        btn_dekrip.invisible()
     }
 
     override fun hideLoading() {
        progress_dekrip.gone()
+        btn_dekrip.visible()
     }
 
     override fun checkForm() {
