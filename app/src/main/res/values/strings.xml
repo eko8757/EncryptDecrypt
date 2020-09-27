@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EnkripDekrip</string>
+    <string name="app_name">Enkrip Dekrip</string>
     <string name="judul">Tata Cara Penggunaan</string>
     <string name="petunjuk">\nPertama Pengguna Harus Menentukan Akan Melakukan Enripsi (Mengacak Pesan) Atau Deskripsi
                   (Mengembalikan Pesan Kebentuk Aslinya)
@@ -20,9 +20,9 @@
     <string name="decrypt">Dekripsi</string>
     <string name="hint_decrypt">Hasil...</string>
     <string name="enkripdekrip">Enkrip Dekrip</string>
-    <string name="greetings">Selamat datang di EnkripDekrip</string>
-    <string name="enkripsi">ENKRIPSI</string>
-    <string name="dekripsi">DEKRIPSI</string>
+    <string name="greetings">Welcome! and lets try secure your data with us!</string>
+    <string name="enkripsi">Encrypt</string>
+    <string name="dekripsi">Decrypt</string>
     <string name="masukkanteks">Masukkan teks..</string>
     <string name="masukkankey">Masukkan key..</string>
     <string name="hasilenkrip">Hasil enkrip..</string>
