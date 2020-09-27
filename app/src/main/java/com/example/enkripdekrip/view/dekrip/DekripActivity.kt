@@ -7,12 +7,14 @@ import android.widget.Toast
 import com.example.enkripdekrip.R
 import com.example.enkripdekrip.presenter.dekrip.PresenterDekrip
 import com.example.enkripdekrip.service.BaseApi
+import com.example.enkripdekrip.utils.Commons
 import com.example.enkripdekrip.utils.gone
 import com.example.enkripdekrip.utils.invisible
 import com.example.enkripdekrip.utils.visible
+import com.example.enkripdekrip.view.MainView
 import kotlinx.android.synthetic.main.activity_dekrip.*
 
-class DekripActivity : AppCompatActivity(), DekripView, View.OnClickListener {
+class DekripActivity : AppCompatActivity(), DekripView, MainView, View.OnClickListener {
 
     private lateinit var presenter: PresenterDekrip
 
@@ -21,7 +23,7 @@ class DekripActivity : AppCompatActivity(), DekripView, View.OnClickListener {
         setContentView(R.layout.activity_dekrip)
 
         val factory: BaseApi = BaseApi.create()
-        presenter = PresenterDekrip(this, factory)
+        presenter = PresenterDekrip(this, this, factory)
 
         btn_dekrip.setOnClickListener(this)
     }
@@ -45,9 +47,9 @@ class DekripActivity : AppCompatActivity(), DekripView, View.OnClickListener {
     override fun checkForm() {
         val text = ed_text_dekrip.text.toString()
         if (text.isNotEmpty()) {
-            presenter.postData(text)
+            presenter.onDekrip(text)
         } else {
-            showToast("Cannot be empty")
+            showMessage("Cannot be empty")
         }
     }
 
@@ -55,7 +57,7 @@ class DekripActivity : AppCompatActivity(), DekripView, View.OnClickListener {
         tv_hasil_dekrip.text = data
     }
 
-    override fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    override fun showMessage(msg: String) {
+        Commons().setToast(this, msg)
     }
 }

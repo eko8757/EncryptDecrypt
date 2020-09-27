@@ -3,16 +3,17 @@ package com.example.enkripdekrip.view.enkrip
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import com.example.enkripdekrip.R
 import com.example.enkripdekrip.presenter.enkrip.PresenterEnkrip
 import com.example.enkripdekrip.service.BaseApi
+import com.example.enkripdekrip.utils.Commons
 import com.example.enkripdekrip.utils.gone
 import com.example.enkripdekrip.utils.invisible
 import com.example.enkripdekrip.utils.visible
+import com.example.enkripdekrip.view.MainView
 import kotlinx.android.synthetic.main.activity_enkrip.*
 
-class EnkripActivity : AppCompatActivity(), EnkripView, View.OnClickListener {
+class EnkripActivity : AppCompatActivity(), EnkripView, MainView, View.OnClickListener {
 
     private lateinit var presenterEnkrip: PresenterEnkrip
 
@@ -21,7 +22,7 @@ class EnkripActivity : AppCompatActivity(), EnkripView, View.OnClickListener {
         setContentView(R.layout.activity_enkrip)
 
         val factory: BaseApi = BaseApi.create()
-        presenterEnkrip = PresenterEnkrip(this, factory)
+        presenterEnkrip = PresenterEnkrip(this, this,  factory)
 
         btn_enkrip.setOnClickListener(this)
     }
@@ -46,9 +47,9 @@ class EnkripActivity : AppCompatActivity(), EnkripView, View.OnClickListener {
         val text = ed_text_enkrip.text.toString()
 
         if (text.isNotEmpty()) {
-            presenterEnkrip.postData(text)
+            presenterEnkrip.onEnkrip(text)
         } else {
-            showToast("Cannot be empty")
+            showMessage("Cannot be empty")
         }
     }
 
@@ -56,7 +57,7 @@ class EnkripActivity : AppCompatActivity(), EnkripView, View.OnClickListener {
         tv_hasil_enkrip.text = data
     }
 
-    override fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    override fun showMessage(msg: String) {
+        Commons().setToast(this, msg)
     }
 }

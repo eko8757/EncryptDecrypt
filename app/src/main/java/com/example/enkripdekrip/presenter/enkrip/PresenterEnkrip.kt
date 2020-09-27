@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.enkripdekrip.model.enkrip.PostEnkrip
 import com.example.enkripdekrip.model.enkrip.ResponseEnkrip
 import com.example.enkripdekrip.service.BaseApi
+import com.example.enkripdekrip.view.MainView
 import com.example.enkripdekrip.view.enkrip.EnkripView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -11,13 +12,13 @@ import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Response
 
-class PresenterEnkrip(val view: EnkripView, val factory: BaseApi) {
+class PresenterEnkrip(val view: EnkripView, private val mainView: MainView, val factory: BaseApi) : EnkripView.Presenter {
 
     private var mCompositeDisposable: CompositeDisposable? = null
 
-    fun postData(text: String) {
-        view.showLoading()
-        val dataEnkrip = PostEnkrip(text)
+    override fun onEnkrip(txt: String) {
+        mainView.showLoading()
+        val dataEnkrip = PostEnkrip(txt)
         mCompositeDisposable = CompositeDisposable()
         mCompositeDisposable?.add(
             factory.postDataEnkrip(dataEnkrip)
@@ -25,23 +26,23 @@ class PresenterEnkrip(val view: EnkripView, val factory: BaseApi) {
                 .subscribeOn(Schedulers.io())
                 .subscribeWith(object : DisposableObserver<Response<ResponseEnkrip>>() {
                     override fun onComplete() {
-                        view.hideLoading()
+                        mainView.hideLoading()
                     }
 
                     override fun onNext(t: Response<ResponseEnkrip>) {
                         if (t.code() == 201) {
-                            view.hideLoading()
+                            mainView.hideLoading()
                             view.showData(t.body()?.data.toString())
                             Log.d("DataEnkrip", t.body()?.data.toString())
                         } else {
-                            view.hideLoading()
-                            view.showToast(t.body()?.message.toString())
+                            mainView.hideLoading()
+                            mainView.showMessage(t.body()?.message.toString())
                         }
                     }
 
                     override fun onError(e: Throwable) {
-                        view.hideLoading()
-                        view.showToast(e.message.toString())
+                        mainView.hideLoading()
+                        mainView.showMessage(e.message.toString())
 
                     }
                 })
